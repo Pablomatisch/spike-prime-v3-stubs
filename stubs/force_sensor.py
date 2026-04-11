@@ -17,8 +17,9 @@ module as a prefix like so:
     force_sensor.force(port.A)
 """
 
+from hub.port import Port
 
-def force(port: int) -> int:
+def force(port: Port) -> int:
     """Get the measured force in decinewtons. Values range from 0 to 100.
 
     ::
@@ -33,7 +34,7 @@ def force(port: int) -> int:
     """
 
 
-def pressed(port: int) -> bool:
+def pressed(port: Port) -> bool:
     """Test whether the button on the sensor is pressed. Returns true if the
     force sensor connected to port ``port`` is pressed.
 
@@ -49,7 +50,7 @@ def pressed(port: int) -> bool:
     """
 
 
-def raw(port: int) -> int:
+def raw(port: Port) -> int:
     """Get the raw, uncalibrated force value of the force sensor connected
     on port ``port``.
 

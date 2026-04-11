@@ -40,6 +40,7 @@ determined empirically and they should be used with caution.
 """
 
 from typing import Awaitable
+from hub.port import Port
 
 READY = 0
 RUNNING = 1
@@ -59,7 +60,7 @@ SHORTEST_PATH = 2
 LONGEST_PATH = 3
 
 
-def absolute_position(port: int) -> int:
+def absolute_position(port: Port) -> int:
     """Get the absolute position of a Motor in degrees. Return values range
     from -179 to 180. Positive values indicate clockwise rotation from zero;
     negative values indicate counter-clockwise rotation.
@@ -69,7 +70,7 @@ def absolute_position(port: int) -> int:
     """
 
 
-def get_duty_cycle(port: int) -> int:
+def get_duty_cycle(port: Port) -> int:
     """Get the PWM duty cycle of a Motor.
 
     :param port: A port from the ``port`` submodule in the ``hub`` module
@@ -77,7 +78,7 @@ def get_duty_cycle(port: int) -> int:
     """
 
 
-def relative_position(port: int) -> int:
+def relative_position(port: Port) -> int:
     """Get the relative position of a Motor. This is the cumulative number of
     degrees the motor has moved (positive or negative) from its starting
     position (either at hub boot or after a call to 
@@ -90,7 +91,7 @@ def relative_position(port: int) -> int:
     """
 
 
-def reset_relative_position(port: int, position: int) -> None:
+def reset_relative_position(port: Port, position: int) -> None:
     """Set the position used as the offset when using the ``relative_position``
     or ``run_to_relative_position`` functions. If no position is given, resets
     to zero.
@@ -101,7 +102,7 @@ def reset_relative_position(port: int, position: int) -> None:
     """
 
 
-def run(port: int, velocity: int, *, acceleration: int = 1000) -> None:
+def run(port: Port, velocity: int, *, acceleration: int = 1000) -> None:
     """Run a Motor at a constant speed until a new command is given.
 
     ::
@@ -123,7 +124,7 @@ def run(port: int, velocity: int, *, acceleration: int = 1000) -> None:
 
 
 def run_for_degrees(
-    port: int,
+    port: Port,
     degrees: int,
     velocity: int,
     *,
@@ -170,7 +171,7 @@ def run_for_degrees(
 
 
 def run_for_time(
-    port: int,
+    port: Port,
     duration: int,
     velocity: int,
     *,
@@ -233,7 +234,7 @@ def run_for_time(
 
 
 def run_to_absolute_position(
-    port: int,
+    port: Port,
     position: int,
     velocity: int,
     *,
@@ -294,7 +295,7 @@ def run_to_absolute_position(
 
 
 def run_to_relative_position(
-    port: int,
+    port: Port,
     position: int,
     velocity: int,
     *,
@@ -340,7 +341,7 @@ def run_to_relative_position(
     """
 
 
-def set_duty_cycle(port: int, pwm: int) -> None:
+def set_duty_cycle(port: Port, pwm: int) -> None:
     """Start a Motor with a specific PWM.
 
     :param port: A port from the ``port`` submodule in the ``hub`` module
@@ -349,7 +350,7 @@ def set_duty_cycle(port: int, pwm: int) -> None:
     """
 
 
-def stop(port: int, *, stop: int = BRAKE) -> None:
+def stop(port: Port, *, stop: int = BRAKE) -> None:
     """Stop the Motor given by ``port``. If no ``port`` is specified, stop all
     attached motors.
 
@@ -385,7 +386,7 @@ def stop(port: int, *, stop: int = BRAKE) -> None:
     """
 
 
-def velocity(port: int) -> int:
+def velocity(port: Port) -> int:
     """Get the velocity (deg/sec) of a Motor (*NOTE*: empirical testing
     suggests the unit of the returned value is *not* in deg/sec).
 
@@ -394,7 +395,7 @@ def velocity(port: int) -> int:
     """
 
 
-def status(port: int) -> int:
+def status(port: Port) -> int:
     """**UNDOCUMENTED** Get the Motor status as one of:
 
     * ``motor.READY``
@@ -412,7 +413,7 @@ def status(port: int) -> int:
     """
 
 
-def info(port: int) -> tuple[int, int]:
+def info(port: Port) -> tuple[int, int]:
     """**UNDOCUMENTED** Get the device ID and maximum speed of the Motor
     as a tuple.
 

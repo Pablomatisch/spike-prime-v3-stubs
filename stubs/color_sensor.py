@@ -32,8 +32,10 @@ It can also return intensity values for the red, green, and blue channels
 individually for more control over color recognition.
 """
 
+from hub.port import Port
 
-def color(port: int) -> int:
+
+def color(port: Port) -> int:
     """Get the enumerated color value of the detected color. Use the
     ``color`` module to map the color value to a specific color.
 
@@ -51,7 +53,7 @@ def color(port: int) -> int:
     """
 
 
-def reflection(port: int) -> int:
+def reflection(port: Port) -> int:
     """Get the intensity of the reflected light as a percent (0-100).
 
     :param port: A port from the ``port`` submodule in the ``hub`` module
@@ -59,7 +61,7 @@ def reflection(port: int) -> int:
     """
 
 
-def rgbi(port: int) -> tuple[int, int, int, int]:
+def rgbi(port: Port) -> tuple[int, int, int, int]:
     """Get the individual intensities of red, green and blue as well as
     the overall intensity, each on a scale of 0-1024.
 

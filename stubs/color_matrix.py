@@ -18,8 +18,10 @@ module as a prefix like so:
     color_matrix.set_pixel(port.A, 1, 1, (color.BLUE, 10))
 """
 
+from hub.port import Port
 
-def clear(port: int) -> None:
+
+def clear(port: Port) -> None:
     """Turn off all pixels on a Color Matrix
 
     ::
@@ -34,7 +36,7 @@ def clear(port: int) -> None:
     """
 
 
-def get_pixel(port: int, x: int, y: int) -> tuple[int, int]:
+def get_pixel(port: Port, x: int, y: int) -> tuple[int, int]:
     """Get the current value of a specific pixel at column X and row Y,
     represented as a tuple containing the color and intensity.
 
@@ -54,7 +56,7 @@ def get_pixel(port: int, x: int, y: int) -> tuple[int, int]:
     """
 
 
-def set_pixel(port: int, x: int, y: int, pixel: tuple[int, int]) -> None:
+def set_pixel(port: Port, x: int, y: int, pixel: tuple[int, int]) -> None:
     """Set the color and intensity of a single pixel at column X and row Y.
 
     ::
@@ -79,7 +81,7 @@ def set_pixel(port: int, x: int, y: int, pixel: tuple[int, int]) -> None:
     """
 
 
-def show(port: int, pixels: list[tuple[int, int]]) -> None:
+def show(port: Port, pixels: list[tuple[int, int]]) -> None:
     """Set the color and intensity of all pixels at once on a Color Matrix
 
     ::

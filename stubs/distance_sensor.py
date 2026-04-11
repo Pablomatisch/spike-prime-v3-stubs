@@ -17,8 +17,9 @@ module as a prefix like so:
     distance_sensor.distance(port.A)
 """
 
+from hub.port import Port
 
-def clear(port: int) -> None:
+def clear(port: Port) -> None:
     """Turn off all lights on the Distance Sensor connected to ``port``.
 
     :param port: A port from the ``port`` submodule in the ``hub`` module
@@ -26,7 +27,7 @@ def clear(port: int) -> None:
     """
 
 
-def distance(port: int) -> int:
+def distance(port: Port) -> int:
     """Get the distance (in millimeters) captured by the Distance Sensor
     connected to ``port``. If the Distance Sensor cannot read a valid distance,
     it will return -1.
@@ -36,7 +37,7 @@ def distance(port: int) -> int:
     """
 
 
-def get_pixel(port: int, x: int, y: int) -> int:
+def get_pixel(port: Port, x: int, y: int) -> int:
     """Get the intensity of a specific light on the Distance Sensor
     connected to ``port`` as a percentage (0–100).
 
@@ -47,7 +48,7 @@ def get_pixel(port: int, x: int, y: int) -> int:
     """
 
 
-def set_pixel(port: int, x: int, y: int, intensity: int) -> None:
+def set_pixel(port: Port, x: int, y: int, intensity: int) -> None:
     """Set the intensity of a specific light on the Distance Sensor
     connected to ``port``.
 
@@ -59,7 +60,7 @@ def set_pixel(port: int, x: int, y: int, intensity: int) -> None:
     """
 
 
-def show(port: int, pixels: list[int]) -> None:
+def show(port: Port, pixels: list[int]) -> None:
     """Set all lights at the same time.
 
     ::

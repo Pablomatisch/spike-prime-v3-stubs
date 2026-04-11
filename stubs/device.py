@@ -16,8 +16,10 @@ module as a prefix like so:
     device.id(port.A)
 """
 
+from hub.port import Port
 
-def data(port: int) -> tuple[int]:
+
+def data(port: Port) -> tuple[int]:
     """Get the raw LPF-2 data from a device.
 
     :param port: A port from the ``port`` submodule in the ``hub`` module
@@ -25,7 +27,7 @@ def data(port: int) -> tuple[int]:
     """
 
 
-def id(port: int) -> int:
+def id(port: Port) -> int:
     """Get the device type ID of a device. Each device has an ID based on its
     type. IDs for commonly used Spike Prime inputs/outputs (from
     `<https://github.com/pybricks/technical-info/blob/master/assigned-numbers.md>`_
@@ -46,7 +48,7 @@ def id(port: int) -> int:
     """
 
 
-def get_duty_cycle(port: int) -> int:
+def get_duty_cycle(port: Port) -> int:
     """Get the duty cycle for a device. Returned value is in range 0 to
     10000.
 
@@ -55,7 +57,7 @@ def get_duty_cycle(port: int) -> int:
     """
 
 
-def ready(port: int) -> bool:
+def ready(port: Port) -> bool:
     """When a device is attached to the hub, it might take a short amount of
     time before it is ready to accept requests. Use ``ready`` to test for the
     readiness of the attached devices.
@@ -65,7 +67,7 @@ def ready(port: int) -> bool:
     """
 
 
-def set_duty_cycle(port: int, duty_cycle: int) -> None:
+def set_duty_cycle(port: Port, duty_cycle: int) -> None:
     """Set the duty cycle on a device. Range 0 to 10000.
 
     :param port: A port from the ``port`` submodule in the ``hub`` module

@@ -25,6 +25,7 @@ The following constants are defined:
 
 from typing import Awaitable
 import motor
+from hub.port import Port
 
 PAIR_1 = 0
 PAIR_2 = 1
@@ -392,7 +393,7 @@ def move_tank_for_time(
     """
 
 
-def pair(pair: int, left_motor: int, right_motor: int) -> None:
+def pair(pair: int, left_motor: Port, right_motor: Port) -> None:
     """Pair two motors (``left_motor`` & ``right_motor``) and store the paired
     motors in ``pair``. Use ``pair`` in all subsequent ``motor_pair``-related
     function calls.

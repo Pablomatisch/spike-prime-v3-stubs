@@ -25,10 +25,21 @@ The following constants are defined:
 * ``E`` = 4
 * ``F`` = 5
 """
+from typing import Final
 
-A = 0
-B = 1
-C = 2
-D = 3
-E = 4
-F = 5
+class _Port:  # internal type only
+    """Internal type representation of a hub port."""
+    def __repr__(self) -> str: ...
+
+A: Final[_Port]
+"""Port A"""
+B: Final[_Port]
+"""Port B"""
+C: Final[_Port]
+"""Port C"""
+D: Final[_Port]
+"""Port D"""
+E: Final[_Port]
+"""Port E"""
+F: Final[_Port]
+"""Port F"""
