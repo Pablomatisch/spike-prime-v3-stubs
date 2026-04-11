@@ -26,13 +26,14 @@ The following constants are defined:
 """
 
 from typing import Awaitable
+from typing import Final
 
-ANY = -2
-DEFAULT = -1
-WAVEFORM_SINE = 0
-WAVEFORM_TRIANGLE = 1
-WAVEFORM_SQUARE = 2
-WAVEFORM_SAWTOOTH = 3
+ANY: Final[int] = -2
+DEFAULT: Final[int] = -1
+WAVEFORM_SINE: Final[int] = 0
+WAVEFORM_TRIANGLE: Final[int] = 1
+WAVEFORM_SQUARE: Final[int] = 2
+WAVEFORM_SAWTOOTH: Final[int] = 3
 
 
 def beep(

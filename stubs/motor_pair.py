@@ -24,12 +24,14 @@ The following constants are defined:
 """
 
 from typing import Awaitable
+from typing import Final
 import motor
 from hub.port import Port
 
-PAIR_1 = 0
-PAIR_2 = 1
-PAIR_3 = 2
+
+PAIR_1: Final[int] = 0
+PAIR_2: Final[int] = 1
+PAIR_3: Final[int] = 2
 
 
 def move(

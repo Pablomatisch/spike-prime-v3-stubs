@@ -21,8 +21,10 @@ The following constants are defined:
 * ``CONNECT`` = 1
 """
 
-POWER = 0
-CONNECT = 1
+from typing import Final
+
+POWER: Final[int] = 0
+CONNECT: Final[int] = 1
 
 
 def color(light: int, color: int) -> None:

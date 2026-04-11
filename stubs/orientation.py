@@ -16,7 +16,9 @@ The following constants are defined:
 * ``LEFT`` = 3
 """
 
-UP = 0
-RIGHT = 1
-DOWN = 2
-LEFT = 3
+from typing import Final
+
+UP: Final[int] = 0
+RIGHT: Final[int] = 1
+DOWN: Final[int] = 2
+LEFT: Final[int] = 3

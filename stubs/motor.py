@@ -40,24 +40,30 @@ determined empirically and they should be used with caution.
 """
 
 from typing import Awaitable
+from typing import Final
+from typing import TypeAlias
 from hub.port import Port
 
-READY = 0
-RUNNING = 1
-STALLED = 2
-CANCELLED = 3
-ERROR = 4
-DISCONNECTED = 5
-COAST = 0
-BRAKE = 1
-HOLD = 2
-CONTINUE = 3
-SMART_COAST = 4
-SMART_BRAKE = 5
-CLOCKWISE = 0
-COUNTERCLOCKWISE = 1
-SHORTEST_PATH = 2
-LONGEST_PATH = 3
+MotorState: TypeAlias = int
+MotorBrakeMode: TypeAlias = int
+MotorDirection: TypeAlias = int
+
+READY: Final[MotorState] = 0
+RUNNING: Final[MotorState] = 1
+STALLED: Final[MotorState] = 2
+CANCELLED: Final[MotorState] = 3
+ERROR: Final[MotorState] = 4
+DISCONNECTED: Final[MotorState] = 5
+COAST: Final[MotorState] = 0
+BRAKE: Final[MotorBrakeMode] = 1
+HOLD: Final[MotorBrakeMode] = 2
+CONTINUE: Final[MotorBrakeMode] = 3
+SMART_COAST: Final[MotorBrakeMode] = 4
+SMART_BRAKE: Final[MotorBrakeMode] = 5
+CLOCKWISE: Final[MotorBrakeMode] = 0
+COUNTERCLOCKWISE: Final[MotorBrakeMode] = 1
+SHORTEST_PATH: Final[MotorDirection] = 2
+LONGEST_PATH: Final[MotorDirection] = 3
 
 
 def absolute_position(port: Port) -> int:

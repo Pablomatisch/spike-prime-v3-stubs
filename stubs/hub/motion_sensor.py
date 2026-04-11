@@ -31,18 +31,19 @@ The following constants are defined:
 * ``LEFT`` = 5 (the left side of the SPIKE Prime hub when facing the front
     hub face)
 """
+from typing import Final
 
-TAPPED = 0
-DOUBLE_TAPPED = 1
-SHAKEN = 2
-FALLING = 3
-UNKNOWN = -1
-TOP = 0
-FRONT = 1
-RIGHT = 2
-BOTTOM = 3
-BACK = 4
-LEFT = 5
+TAPPED: Final[int] = 0
+DOUBLE_TAPPED: Final[int] = 1
+SHAKEN: Final[int] = 2
+FALLING: Final[int] = 3
+UNKNOWN: Final[int] = -1
+TOP: Final[int] = 0
+FRONT: Final[int] = 1
+RIGHT: Final[int] = 2
+BOTTOM: Final[int] = 3
+BACK: Final[int] = 4
+LEFT: Final[int] = 5
 
 
 def acceleration(raw_unfiltered: bool) -> tuple[int, int, int]:

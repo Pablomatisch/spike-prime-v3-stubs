@@ -22,11 +22,12 @@ The following constants are defined:
 * ``RIGHT`` = 2
 * ``CONNECT`` = 3 (**UNDOCUMENTED**)
 """
+from typing import Final
 
-LEFT = 0
-POWER = 1
-RIGHT = 2
-CONNECT = 3
+LEFT: Final[int] = 0
+POWER: Final[int] = 1
+RIGHT: Final[int] = 2
+CONNECT: Final[int] = 3
 
 
 def pressed(button: int) -> int:
