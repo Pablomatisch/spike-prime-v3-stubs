@@ -1,0 +1,1 @@
+"""SPIKE 3 type stubs for IntelliSense."""

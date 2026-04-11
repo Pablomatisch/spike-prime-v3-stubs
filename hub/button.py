@@ -23,6 +23,16 @@ The following constants are defined:
 * ``CONNECT`` = 3 (**UNDOCUMENTED**)
 """
 from typing import Final
+import sys
+
+#message when run on pc
+
+sys.stderr.write(
+    "❌ LEGO SPIKE runtime not detected.\n"
+    "This code only works on the SPIKE hardware.\n"
+)
+
+sys.exit(1)
 
 LEFT: Final[int] = 0
 POWER: Final[int] = 1

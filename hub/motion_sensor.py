@@ -32,6 +32,16 @@ The following constants are defined:
     hub face)
 """
 from typing import Final
+import sys
+
+#message when run on pc
+
+sys.stderr.write(
+    "❌ LEGO SPIKE runtime not detected.\n"
+    "This code only works on the SPIKE hardware.\n"
+)
+
+sys.exit(1)
 
 TAPPED: Final[int] = 0
 DOUBLE_TAPPED: Final[int] = 1

@@ -23,7 +23,16 @@ documented in the official LEGO materials. These are marked as
 **UNDOCUMENTED** in the function descriptions below. Their behavior has been
 determined empirically and they should be used with caution.
 """
+import sys
 
+#message when run on pc
+
+sys.stderr.write(
+    "❌ LEGO SPIKE runtime not detected.\n"
+    "This code only works on the SPIKE hardware.\n"
+)
+
+sys.exit(1)
 
 def device_uuid() -> str:
     """Get the device id.

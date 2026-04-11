@@ -27,6 +27,16 @@ from typing import Awaitable
 from typing import Final
 import motor
 from hub.port import Port
+import sys
+
+#message when run on pc
+
+sys.stderr.write(
+    "❌ LEGO SPIKE runtime not detected.\n"
+    "This code only works on the SPIKE hardware.\n"
+)
+
+sys.exit(1)
 
 
 PAIR_1: Final[int] = 0

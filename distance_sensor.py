@@ -18,6 +18,16 @@ module as a prefix like so:
 """
 
 from hub.port import Port
+import sys
+
+#message when run on pc
+
+sys.stderr.write(
+    "❌ LEGO SPIKE runtime not detected.\n"
+    "This code only works on the SPIKE hardware.\n"
+)
+
+sys.exit(1)
 
 def clear(port: Port) -> None:
     """Turn off all lights on the Distance Sensor connected to ``port``.

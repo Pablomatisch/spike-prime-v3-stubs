@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spike3-stubs"
+version = "0.1.0"
+description = "Unofficial type stubs for LEGO SPIKE Prime Python v3 providing VS Code IntelliSense and autocomplete support"
+readme = "README.md"
+requires-python = ">=3.10"
+
+authors = [
+    { name = "Paul Spitaler" }
+]
+
+license = { text = "MIT" }
+
+keywords = [
+    "lego",
+    "spike",
+    "spike prime",
+    "spike prime v3",
+    "robotics",
+    "python",
+    "stubs",
+    "typing",
+    "intellisense",
+    "autocomplete",
+    "vscode",
+    "micropython"
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Typing :: Typed",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[project.urls]
+Repository = "https://github.com/Pablomatisch/spike-prime-v3-stubs"
+
+[tool.setuptools]
+include-package-data = true
+
+py-modules = [
+    "motor",
+    "color_matrix",
+    "orientation",
+    "color",
+    "device",
+    "color_sensor",
+    "distance_sensor",
+    "force_sensor",
+    "motor_pair",
+    "runloop"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["hub*"]

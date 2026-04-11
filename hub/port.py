@@ -26,6 +26,16 @@ The following constants are defined:
 * ``F`` = 5
 """
 from typing import Final
+import sys
+
+#message when run on pc
+
+sys.stderr.write(
+    "❌ LEGO SPIKE runtime not detected.\n"
+    "This code only works on the SPIKE hardware.\n"
+)
+
+sys.exit(1)
 
 class _Port:  # internal type only
     """Internal type representation of a hub port."""

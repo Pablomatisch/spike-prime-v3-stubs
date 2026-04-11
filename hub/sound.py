@@ -27,6 +27,16 @@ The following constants are defined:
 
 from typing import Awaitable
 from typing import Final
+import sys
+
+#message when run on pc
+
+sys.stderr.write(
+    "❌ LEGO SPIKE runtime not detected.\n"
+    "This code only works on the SPIKE hardware.\n"
+)
+
+sys.exit(1)
 
 ANY: Final[int] = -2
 DEFAULT: Final[int] = -1
