@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "spike3-stubs"
-version = "0.1.0"
+version = "0.1.1"
 description = "Unofficial type stubs for LEGO SPIKE Prime Python v3 providing VS Code IntelliSense and autocomplete support"
 readme = "README.md"
 requires-python = ">=3.10"
