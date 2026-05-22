@@ -37,19 +37,15 @@ sys.stderr.write(
 
 sys.exit(1)
 
-class _Port:  # internal type only
-    """Internal type representation of a hub port."""
-    def __repr__(self) -> str: ...
-
-A: Final[_Port]
+A: Final[int] = 0
 """Port A"""
-B: Final[_Port]
+B: Final[int] = 1
 """Port B"""
-C: Final[_Port]
+C: Final[int] = 2
 """Port C"""
-D: Final[_Port]
+D: Final[int] = 3
 """Port D"""
-E: Final[_Port]
+E: Final[int] = 4
 """Port E"""
-F: Final[_Port]
+F: Final[int] = 5
 """Port F"""
